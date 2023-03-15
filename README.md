@@ -2,8 +2,10 @@
 
     Fullstack Responsive Movie Website 2022
 
-# Video tutorial
+# This project, i learn from Tran Anh Tuat channel, he is a good dev and i learned new knodledge about him, Respect!!!
 
+
+# This is video tutorial of him
 [Part 1](https://youtu.be/j-Sn1b4OlLA)<br>
 
 [Part 2](https://youtu.be/Q_uLi4f27Lc)<br>
