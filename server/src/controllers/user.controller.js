@@ -4,6 +4,7 @@ import responseHandler from "../handlers/response.handler.js";
 
 const signup = async (req, res) => {
   try {
+    // console.log(req);
     const { username, password, displayName } = req.body;
 
     const checkUser = await userModel.findOne({ username });
@@ -14,13 +15,13 @@ const signup = async (req, res) => {
 
     user.displayName = displayName;
     user.username = username;
-    let value = user.setPassword(password);
-    console.log({ value });
-    await user.save();
 
+    user.setPassword(password);
+    console.log('The value of user: ' + user);
+    await user.save();
     const token = jsonwebtoken.sign(
       { data: user.id },
-      process.env.TOKEN_SECRET,
+      process.env.TOKEN_SECRET || "secrect",
       { expiresIn: "24h" }
     );
 
@@ -30,13 +31,13 @@ const signup = async (req, res) => {
       id: user.id
     });
   } catch {
-    console.log('err');
     responseHandler.error(res);
   }
 };
 
 const signin = async (req, res) => {
   try {
+
     const { username, password } = req.body;
 
     const user = await userModel.findOne({ username }).select("username password salt id displayName");
@@ -45,9 +46,10 @@ const signin = async (req, res) => {
 
     if (!user.validPassword(password)) return responseHandler.badrequest(res, "Wrong password");
 
+    console.log({ user });
     const token = jsonwebtoken.sign(
       { data: user.id },
-      process.env.TOKEN_SECRET,
+      process.env.TOKEN_SECRET || "secrect",
       { expiresIn: "24h" }
     );
 

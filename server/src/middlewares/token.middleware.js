@@ -11,7 +11,7 @@ const tokenDecode = (req) => {
 
       return jsonwebtoken.verify(
         token,
-        process.env.TOKEN_SECRET
+        process.env.TOKEN_SECRET || "secrect"
       );
     }
 
