@@ -12,6 +12,7 @@ import { setAppState } from "../redux/features/appStateSlice";
 import { setGlobalLoading } from "../redux/features/globalLoadingSlice";
 import { toast } from "react-toastify";
 import usePrevious from "../hooks/usePrevious";
+import { MOVIES_WATCHING } from "../utils/favorite.utils";
 
 const MediaList = () => {
   const { mediaType } = useParams();
@@ -28,6 +29,8 @@ const MediaList = () => {
   const category = ["popular", "top rated"];
 
   useEffect(() => {
+    document.title = `Media List Page - ${MOVIES_WATCHING}`
+
     dispatch(setAppState(mediaType));
     window.scrollTo(0, 0);
   }, [mediaType, dispatch]);

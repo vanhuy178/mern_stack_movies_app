@@ -10,6 +10,7 @@ import uiConfigs from "../configs/ui.configs";
 import favoriteApi from "../api/modules/favorite.api";
 import { setGlobalLoading } from "../redux/features/globalLoadingSlice";
 import { removeFavorite } from "../redux/features/userSlice";
+import { MOVIES_WATCHING } from "../utils/favorite.utils";
 
 const FavoriteItem = ({ media, onRemoved }) => {
   const dispatch = useDispatch();
@@ -30,6 +31,10 @@ const FavoriteItem = ({ media, onRemoved }) => {
     }
   };
 
+  useEffect(() => {
+    document.title = `Favorite List Page- ${MOVIES_WATCHING}`
+
+  }, [])
   return (<>
     <MediaItem media={media} mediaType={media.mediaType} />
     <LoadingButton

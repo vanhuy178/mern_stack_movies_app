@@ -9,6 +9,7 @@ import personApi from "../api/modules/person.api";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { setGlobalLoading } from "../redux/features/globalLoadingSlice";
+import { MOVIES_WATCHING } from "../utils/favorite.utils";
 
 const PersonDetail = () => {
   const { personId } = useParams();
@@ -16,6 +17,8 @@ const PersonDetail = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    document.title = `Detailed Person Page - ${MOVIES_WATCHING}`
+
     const getPerson = async () => {
       dispatch(setGlobalLoading(true));
       const { response, err } = await personApi.detail({ personId });

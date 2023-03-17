@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import mediaApi from "../api/modules/media.api";
 import MediaGrid from "../components/common/MediaGrid";
 import uiConfigs from "../configs/ui.configs";
+import { MOVIES_WATCHING } from "../utils/favorite.utils";
 
 const mediaTypes = ["movie", "tv", "people"];
 let timer;
@@ -39,6 +40,7 @@ const MediaSearch = () => {
   );
 
   useEffect(() => {
+    document.title = `Media Search Page - ${MOVIES_WATCHING}`
     if (query.trim().length === 0) {
       setMedias([]);
       setPage(1);

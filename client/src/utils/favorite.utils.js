@@ -3,3 +3,6 @@ const favoriteUtils = {
 };
 
 export default favoriteUtils;
+
+
+export const MOVIES_WATCHING = 'Movies Watching'
