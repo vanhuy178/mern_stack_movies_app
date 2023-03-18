@@ -1,0 +1,1 @@
+export const baseURL = "https://mern-stack-movies-app-v1.onrender.com/api/v1/";
