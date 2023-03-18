@@ -5,11 +5,11 @@ import { Box } from '@mui/material';
 import uiConfigs from "../configs/ui.configs";
 import Container from "../components/common/Container";
 import MediaSlide from "../components/common/MediaSlide";
-import { MOVIES_WATCHING } from '../utils/favorite.utils';
+import { MOVIES_WATCHING, TOP_NAV } from '../utils/favorite.utils';
 
 const HomePage = () => {
   useEffect(() => {
-    document.title = `Home Pages - ${MOVIES_WATCHING}`
+    document.title = `${TOP_NAV.Home_Pages} - ${MOVIES_WATCHING}`
   }, [])
   return (
     <>

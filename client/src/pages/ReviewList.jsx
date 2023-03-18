@@ -12,7 +12,7 @@ import uiConfigs from "../configs/ui.configs";
 import { setGlobalLoading } from "../redux/features/globalLoadingSlice";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { routesGen } from "../routes/routes";
-import { MOVIES_WATCHING } from "../utils/favorite.utils";
+import { MOVIES_WATCHING, TOP_NAV } from "../utils/favorite.utils";
 
 const ReviewItem = ({ review, onRemoved }) => {
   const [onRequest, setOnRequest] = useState(false);
@@ -104,7 +104,7 @@ const ReviewList = () => {
   const skip = 2;
 
   useEffect(() => {
-    document.title = `Review List Page - ${MOVIES_WATCHING}`
+    document.title = `${TOP_NAV.Review_List_Page} - ${MOVIES_WATCHING}`
 
     const getReviews = async () => {
       dispatch(setGlobalLoading(true));

@@ -4,14 +4,13 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import Container from "../components/common/Container";
 import uiConfigs from "../configs/ui.configs";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import userApi from "../api/modules/user.api";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setUser } from "../redux/features/userSlice";
 import { setAuthModalOpen } from "../redux/features/authModalSlice";
-import { MOVIES_WATCHING } from "../utils/favorite.utils";
 
 const PasswordUpdate = () => {
   const [onRequest, setOnRequest] = useState(false);
@@ -58,10 +57,6 @@ const PasswordUpdate = () => {
     }
   };
 
-  useEffect(() => {
-    document.title = `Password Update Page- ${MOVIES_WATCHING}`
-
-  }, [])
 
   return (
     <Box sx={{ ...uiConfigs.style.mainContent }}>

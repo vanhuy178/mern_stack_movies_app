@@ -29,7 +29,7 @@ import PosterSlide from "../components/common/PosterSlide";
 import RecommendSlide from "../components/common/RecommendSlide";
 import MediaSlide from "../components/common/MediaSlide";
 import MediaReview from "../components/common/MediaReview";
-import { MOVIES_WATCHING } from "../utils/favorite.utils";
+import { MOVIES_WATCHING, TOP_NAV } from "../utils/favorite.utils";
 
 const MediaDetail = () => {
   const { mediaType, mediaId } = useParams();
@@ -46,7 +46,7 @@ const MediaDetail = () => {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    document.title = `Media Detail Page - ${MOVIES_WATCHING}`
+    document.title = `${TOP_NAV.Media_Detail_Page} - ${MOVIES_WATCHING}`
 
     window.scrollTo(0, 0);
     const getMedia = async () => {
