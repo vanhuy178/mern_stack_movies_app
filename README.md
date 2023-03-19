@@ -4,6 +4,15 @@
 
 ### This project, i learn from Tran Anh Tuat channel, he is a good dev and i learned a lot of great knodledge about him, Respect!!!
 
+### Demo
+
+```
+Link Demo: https://admirable-daifuku-f5bcfc.netlify.app
+
+Link Backend: https://mern-stack-movies-app-v1.onrender.com
+
+```
+
 
 # This is video tutorial of him
 [Part 1](https://youtu.be/j-Sn1b4OlLA)<br>
